@@ -7,32 +7,34 @@ To get started with TDD, see the `README.md` file in your
 =end
 
 class TwelveDays
+  GIFTS = "twelve Drummers Drumming, eleven Pipers Piping, ten Lords-a-Leaping, nine Ladies Dancing, eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree."
+
   def self.factory(n)
     case n
     when 1
-      ["first", "a Partridge in a Pear Tree."]
+      ["first", GIFTS.split(', ').slice(11..-1).join(', ').gsub("and ", "")]
     when 2
-      ["second", "two Turtle Doves, and a Partridge in a Pear Tree."]
+      ["second", GIFTS.split(', ').slice(10..-1).join(', ')]
     when 3
-      ["third", "three French Hens, two Turtle Doves, and a Partridge in a Pear Tree."]
+      ["third", GIFTS.split(', ').slice(9..-1).join(', ')]
     when 4
-      ["fourth", "four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree."]
+      ["fourth", GIFTS.split(', ').slice(8..-1).join(', ')]
     when 5
-      ["fifth", "five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree."]
+      ["fifth", GIFTS.split(', ').slice(7..-1).join(', ')]
     when 6
-      ["sixth", "six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree."]
+      ["sixth", GIFTS.split(', ').slice(6..-1).join(', ')]
     when 7
-      ["seventh", "seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree."]
+      ["seventh", GIFTS.split(', ').slice(5..-1).join(', ')]
     when 8
-      ["eighth", "eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree."]
+      ["eighth", GIFTS.split(', ').slice(4..-1).join(', ')]
     when 9
-      ["ninth", "nine Ladies Dancing, eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree."]
+      ["ninth", GIFTS.split(', ').slice(3..-1).join(', ')]
     when 10
-      ["tenth", "ten Lords-a-Leaping, nine Ladies Dancing, eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree."]
+      ["tenth", GIFTS.split(', ').slice(2..-1).join(', ')]
     when 11
-      ["eleventh", "eleven Pipers Piping, ten Lords-a-Leaping, nine Ladies Dancing, eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree."]
+      ["eleventh", GIFTS.split(', ').slice(1..-1).join(', ')]
     when 12
-      ["twelfth", "twelve Drummers Drumming, eleven Pipers Piping, ten Lords-a-Leaping, nine Ladies Dancing, eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree."]
+      ["twelfth", GIFTS]
     end
   end
 
@@ -53,3 +55,5 @@ class TwelveDays
     whole << "\n"
   end
 end
+
+TwelveDays.song
