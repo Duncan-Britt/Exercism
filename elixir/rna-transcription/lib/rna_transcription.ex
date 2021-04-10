@@ -9,8 +9,7 @@ defmodule RnaTranscription do
   """
   @spec to_rna([char]) :: [char]
   def to_rna(dna) do
-    map = %{71 => 67, 67 => 71, 84 => 65, 65 => 85}
-    result = ''
+    map = %{?G => ?C, ?C => ?G, ?T => ?A, ?A => ?U}
     Enum.map(dna, fn chr -> map[chr] end)
   end
 end
